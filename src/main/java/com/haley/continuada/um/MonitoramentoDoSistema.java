@@ -1,9 +1,12 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package com.haley.continuada.um;
+
+import java.math.BigInteger;
+import java.lang.Math;
 
 /**
  *
@@ -27,29 +30,143 @@ public class MonitoramentoDoSistema extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jProgressBar1 = new javax.swing.JProgressBar();
+        prgBarCpu = new javax.swing.JProgressBar();
+        lblTitulo = new javax.swing.JLabel();
+        lblCpu = new javax.swing.JLabel();
+        lblDisco = new javax.swing.JLabel();
+        prgBarDisco = new javax.swing.JProgressBar();
+        lblMemoria = new javax.swing.JLabel();
+        prgBarMemoria = new javax.swing.JProgressBar();
+        btnMonitorar = new javax.swing.JButton();
+        lblDadoCpu = new javax.swing.JLabel();
+        lblDadoDisco = new javax.swing.JLabel();
+        lblDadoMemoria = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblTitulo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblTitulo.setText("Sistema de monitoramento de hardware");
+
+        lblCpu.setText("CPU(%):");
+
+        lblDisco.setText("Disco(500GB):");
+
+        prgBarDisco.setMaximum(500);
+
+        lblMemoria.setText("Memoria(8GB):");
+
+        prgBarMemoria.setMaximum(8);
+
+        btnMonitorar.setText("Monitorar");
+        btnMonitorar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMonitorarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(214, Short.MAX_VALUE))
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCpu, javax.swing.GroupLayout.PREFERRED_SIZE, 633, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(prgBarCpu, javax.swing.GroupLayout.PREFERRED_SIZE, 584, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(lblDisco, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblDadoCpu, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(45, 45, 45))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(btnMonitorar)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblDadoMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(19, 19, 19))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(lblMemoria)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 278, Short.MAX_VALUE)
+                            .addComponent(lblDadoDisco, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(prgBarDisco, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(prgBarMemoria, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(94, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTitulo)
+                .addGap(173, 173, 173))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(lblTitulo)
+                .addGap(18, 18, 18)
+                .addComponent(lblCpu)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(prgBarCpu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblDisco, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDadoCpu, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(prgBarDisco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblMemoria)
+                    .addComponent(lblDadoDisco, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(prgBarMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(btnMonitorar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblDadoMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    static final int cpuMin = 0;
+    static final int cpuMax = 100;
+    
+    static final int discoMin = 0;
+    static final int discoMax = 500;
+    
+    static final int memoriaMin = 0;
+    static final int memoriaMax = 8;
+        
+    private void btnMonitorarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMonitorarActionPerformed
+        // TODO add your handling code here:
+        Integer rangecpu = cpuMax - cpuMin;
+        Integer rangedisco = discoMax - discoMin + 1;
+        Integer rangememoria = memoriaMax - memoriaMin;
+        
+        double randomCpu = (Math.random() * rangecpu) + cpuMin;
+        int dadocpu = (int)(randomCpu);
+        
+        double randomDisco = (Math.random() * rangedisco) + discoMin;
+        int dadodisco = (int)(randomDisco);
+        
+        double randomMemoria = (Math.random() * rangememoria) + memoriaMin;
+        int dadomemoria = (int)(randomMemoria);
+        
+        lblDadoCpu.setText(String.format("%.2f%% de 100%%",randomCpu));
+        prgBarCpu.setValue(dadocpu);
+        
+        Double porcentagemDisco = (randomDisco / discoMax) * 100;
+        lblDadoDisco.setText(String.format("%.2fGB (%.2f%%) de %dGB", randomDisco, porcentagemDisco, discoMax));
+        prgBarDisco.setValue(dadodisco);
+        
+        Double porcentagemMemoria = (randomMemoria / memoriaMax) * 100;
+        lblDadoMemoria.setText(String.format("%.1fGB (%.2f%%) de %dGB", randomMemoria, porcentagemMemoria, memoriaMax));
+        prgBarMemoria.setValue(dadomemoria);
+        
+        
+    }//GEN-LAST:event_btnMonitorarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,7 +194,7 @@ public class MonitoramentoDoSistema extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MonitoramentoDoSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+              
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -87,6 +204,16 @@ public class MonitoramentoDoSistema extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JButton btnMonitorar;
+    private javax.swing.JLabel lblCpu;
+    private javax.swing.JLabel lblDadoCpu;
+    private javax.swing.JLabel lblDadoDisco;
+    private javax.swing.JLabel lblDadoMemoria;
+    private javax.swing.JLabel lblDisco;
+    private javax.swing.JLabel lblMemoria;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JProgressBar prgBarCpu;
+    private javax.swing.JProgressBar prgBarDisco;
+    private javax.swing.JProgressBar prgBarMemoria;
     // End of variables declaration//GEN-END:variables
 }
