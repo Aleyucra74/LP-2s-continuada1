@@ -23,6 +23,11 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
+          </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -36,26 +41,49 @@
                           <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="btnMonitorar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="lblDadoMemoria" min="-2" pref="157" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
                           <Component id="lblMemoria" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="278" max="32767" attributes="0"/>
                           <Component id="lblDadoDisco" min="-2" pref="202" max="-2" attributes="0"/>
                       </Group>
                       <Component id="prgBarDisco" alignment="0" max="32767" attributes="0"/>
                       <Component id="prgBarMemoria" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="btnMonitorar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="lblDadoMemoria" min="-2" pref="157" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="lblCpu1" alignment="0" pref="100" max="32767" attributes="0"/>
+                          <Component id="lblMinCpu" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblMedCpu" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblMaxCpu" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="lblDisco1" alignment="0" pref="104" max="32767" attributes="0"/>
+                          <Component id="lblMinDisco" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblMedDisco" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblMaxDisco" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="lblMemoria1" max="32767" attributes="0"/>
+                          <Component id="lblMinMemoria" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblMaxMemoria" min="-2" pref="103" max="-2" attributes="0"/>
+                                  <Component id="lblMedMemoria" min="-2" pref="103" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblMedMaxima" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace pref="94" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -92,7 +120,49 @@
                       <Component id="lblDadoMemoria" min="-2" pref="29" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="108" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblCpu1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblDisco1" alignment="3" min="-2" pref="15" max="-2" attributes="0"/>
+                  <Component id="lblMemoria1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="lblMinCpu" max="32767" attributes="0"/>
+                  <Component id="lblMinDisco" min="-2" pref="15" max="-2" attributes="0"/>
+                  <Component id="lblMinMemoria" alignment="1" min="-2" pref="15" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace pref="15" max="32767" attributes="0"/>
+                              <Component id="lblMedMaxima" min="-2" pref="15" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblMedDisco" max="32767" attributes="0"/>
+                                  <Component id="lblMedMemoria" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="lblMaxMemoria" min="-2" pref="15" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="lblMaxCpu" alignment="3" min="-2" pref="15" max="-2" attributes="0"/>
+                                      <Component id="lblMaxDisco" alignment="3" min="-2" pref="15" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="lblMedCpu" min="-2" pref="15" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -146,6 +216,41 @@
     <Component class="javax.swing.JLabel" name="lblDadoDisco">
     </Component>
     <Component class="javax.swing.JLabel" name="lblDadoMemoria">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblCpu1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="CPU(%):"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblDisco1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Disco(500GB):"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMemoria1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Memoria(8GB):"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMinCpu">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMedCpu">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMaxCpu">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMinDisco">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMedDisco">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMaxDisco">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMinMemoria">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMedMaxima">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMaxMemoria">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMedMemoria">
     </Component>
   </SubComponents>
 </Form>
